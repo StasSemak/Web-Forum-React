@@ -1,0 +1,388 @@
+body {
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+    --main-color: rgb(182 170 85);
+    --second-color: rgb(165, 152, 46);
+}
+
+.App{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15%;
+    height: 85px;
+}
+header a {
+    color: black;
+    text-decoration: none;
+}
+nav a {
+    display: inline-block;
+    height: inherit;
+    width: 100px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a:hover {
+    background-color: var(--second-color);
+}
+nav{
+    display: flex;
+}
+
+main{
+    padding: 20px 15%;
+    flex-grow: 1;
+}
+
+button{
+    transition: all .25s;
+}
+button:hover{
+    font-weight: 600;
+    background-color: var(--second-color);
+}
+input, select, button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.searchForm{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.searchForm input {
+    flex-grow: 1;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.searchForm input:focus {
+    outline: none;
+    border: 3px solid var(--main-color);
+}
+.searchForm button{
+    height: 40px;
+    width: 85px;
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.ask-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.ask-form select{
+    height: 40px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    padding: 0 7px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.ask-form select:focus{
+    outline: none;
+    border: 3px solid var(--main-color);
+}
+.ask-form option:hover{
+    background-color: var(--main-color);
+}
+.ask-form .title-input {
+    flex-grow: 1;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.ask-form .title-input:focus {
+    outline: none;
+    border: 3px solid var(--main-color);
+}
+textarea {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 5px 10px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: vertical;
+}
+textarea:focus {
+    outline: none;
+    border: 3px solid var(--main-color);
+}
+.ask-form button, .AddReply button {
+    height: 40px;
+    width: 85px;
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: 16px;
+    align-self: flex-end;
+}
+
+.QuestionPreview{
+    margin-top: 10px;
+    border: 2px solid var(--main-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+.QuestionPreview p, h1{
+    margin: 0;
+}
+.QuestionPreview .date, .topic{
+    font-size: 14px;
+}
+.open-btn{
+    height: 40px;
+    width: 85px;
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: 16px;
+    align-self: flex-end;
+}
+.ques-prew-body{
+    margin-top: 10px;
+}
+
+.Question{
+    margin-top: 10px;
+    border: 2px solid var(--main-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+.Question p, h1{
+    margin: 0;
+}
+.Question h1, .QuestionPreview h1{
+    font-size: 24px;
+}
+.Question .username, .QuestionPreview .username{
+    font-weight: 600;
+}
+.Question .date, .topic{
+    font-size: 14px;
+}
+.Question .topic, .QuestionPreview .topic{
+    color: var(--main-color);
+}
+.ques-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--main-color);
+}
+.title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 5px;
+}
+.ques-body {
+    margin-top: 10px;
+}
+.ques-footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+.rating{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.rating p {
+    font-size: 14px;
+}
+.rating button {
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 3px;
+    width: 20px;
+    font-weight: 600;
+}
+.reply-btn {
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 3px;
+    height: 30px;
+    width: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Reply {
+    margin-top: 10px;
+    border: 2px solid var(--main-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+.Reply p{
+    margin: 0;
+}
+.Reply .username {
+    font-weight: 600;
+}
+.Reply .date {
+    font-size: 14px;
+}
+.reply-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--main-color);
+    margin-bottom: 10px;
+}
+
+.Register, .Login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register-form, .login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    width: 600px;
+}
+.register-form input, .login-form input{
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.register-form input:focus, .login-form input:focus {
+    outline: none;
+    border: 3px solid var(--main-color);
+}
+.register-form button, .login-form button{
+    border: none;
+    background-color: var(--main-color);
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.not-registred{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.not-registred a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.Profile h2{
+    margin: 0;
+}
+.profile-info{
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.profile-info p{
+    margin: 0;
+}
+.profile-info .username{
+    font-size: 24px;
+    font-weight: 600;
+}
+.profile-info .id{
+    font-size: 12px;
+    color: var(--main-color);
+}
+.profile-info .name-id{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.profile-info button{
+    border: none;
+    background-color: var(--main-color);
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.Logout p{
+    margin: 0;
+}
+.Logout div{
+    margin-top: 10px;
+}
+.Logout .buttons-container{
+    display: flex;
+    gap: 10px;
+}
+.Logout button{
+    border: none;
+    background-color: var(--main-color);
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.AddReply form{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.QuestionPage h2{
+    margin: 0;
+    margin-top: 20px;
+}
+
+footer{
+    background-color: black;
+    color: var(--main-color);
+    padding: 0 15%;
+}
