@@ -1,2 +1,0 @@
-D:\react\WebForum\WebForum\obj\Debug\webforum.esproj.SuggestedBindingRedirects.cache
-D:\react\WebForum\WebForum\obj\Debug\webforum.esproj.CoreCompileInputs.cache
